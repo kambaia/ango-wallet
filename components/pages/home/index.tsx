@@ -4,8 +4,9 @@ import Header from '@/components/shared/header';
 import RecentActivities from '@/components/shared/RecentActivities';
 import { defaultConfig } from '@/styles/colors';
 import { Feather } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import React from 'react';
-import { StyleSheet, View, Text, FlatList, Image } from 'react-native';
+import { StyleSheet, View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const dataWeeks = [
@@ -82,10 +83,10 @@ const HomePage = () => {
             <View style={{ padding: defaultConfig.mobilePadding.medium }}>
                 <Text className='font-bold text-[18px]'>Transferencias Recentes</Text>
                 <View className='flex flex-row justify-center items-start pt-5 gap-5'>
-                    <View className='bg-white flex flex-col justify-center items-center gap-2'>
+                    <TouchableOpacity onPress={()=>router.push('/transfer')} className='bg-white flex flex-col justify-center items-center gap-2'>
                         <Image source={require('../../../assets/icons/new-transfer.png')} className='w-20 h-20 rounded-full' />
                         <Text className='text-black text-[15px]'>Novo</Text>
-                    </View>
+                    </TouchableOpacity>
                     <FlatList
                         data={data}
                         renderItem={renderItem}

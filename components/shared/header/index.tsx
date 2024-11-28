@@ -1,19 +1,26 @@
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
-import { s } from './style';
-import { Feather } from '@expo/vector-icons';
-import { defaultConfig } from '@/styles/colors';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { router } from 'expo-router';
 type HeaderProps = {
     search: boolean;
+    colorWhite?:boolean
 }
-const Header = ({ search }: HeaderProps) => {
+const HeaderMain = ({ search, colorWhite }: HeaderProps) => {
     return (
-        <View>
-            <View style={s.container}>
-              
-                <View>
-                    <Feather size={defaultConfig.fontSizes.lg} name='more-vertical' color={defaultConfig.colors.gray100} />
+        <View className='w-full flex flex-row justify-between items-start'>
+            <View className='flex flex-row gap-2 items-center'>
+                <Image source={require('../../../assets/icons/profile-photo.png')} className='w-14 h-14 rounded-full border' />
+                <View className='flex flex-col gap-0'>
+                    <Text className={`${colorWhite? 'text-gray-700':'text-white'} font-bold text-lg`}>Olá,</Text>
+                    <Text className={`${colorWhite? 'text-gray-700':'text-white'} font-bold text-lg`}>Kambaia!</Text>
                 </View>
+            </View>
+            <View>
+                <TouchableOpacity onPress={() => router.push("/register")}>
+                    <Ionicons name="settings-outline" size={24} color={colorWhite? '#252424':'white'} />
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -21,4 +28,4 @@ const Header = ({ search }: HeaderProps) => {
 
 const styles = StyleSheet.create({})
 
-export default Header;
+export default HeaderMain;

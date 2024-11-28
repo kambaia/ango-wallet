@@ -1,14 +1,14 @@
 
-import RegisterForm from '@/components/pages/register';
+import ConfirmRegister from '@/components/pages/confirms';
 import React from 'react';
 import { View } from 'react-native';
 
-const RegisterScreen = () => {
+const ConfirmRegisterScreen = () => {
   return (
     <View className='flex-1 bg-[#007BFF] flex-col justify-end'>
-      <RegisterForm />
+      <ConfirmRegister />
     </View>
   );
 };
 
-export default RegisterScreen;
+export default ConfirmRegisterScreen;

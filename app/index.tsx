@@ -1,15 +1,18 @@
-import { LoginForm } from '@/components/pages/login';
+
+import LoginForm from '@/components/pages/login';
+import RegisterForm from '@/components/pages/register';
+import Header from '@/components/shared/header';
 import ProfileHeader from '@/components/shared/ProfileHeader';
 import React from 'react';
 import { View } from 'react-native';
 
-const StartScreen = () => {
+const loginScreen = () => {
   return (
     <View className='flex-1 bg-[#007BFF] flex-col justify-end'>
-      <ProfileHeader />
-      <LoginForm />
+      <ProfileHeader/>
+      <LoginForm/>
     </View>
   );
 };
 
-export default StartScreen;
+export default loginScreen;

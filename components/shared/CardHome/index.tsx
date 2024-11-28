@@ -3,26 +3,13 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Octicons from '@expo/vector-icons/Octicons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import HeaderMain from '../header';
+
 
 const CardHome = () => {
     return (
-        <View className='w-full px-5 py-10 flex flex-col gap-5 bg-[#270685]'>
-
-            <View className='w-full flex flex-row justify-between items-start'>
-                <View className='flex flex-row gap-2 items-center'>
-                    <Image source={require('../../../assets/icons/profile-photo.png')} className='w-14 h-14 rounded-full border' />
-                    <View className='flex flex-col gap-0'>
-                        <Text className='text-white font-bold text-lg'>Olá,</Text>
-                        <Text className='text-white font-bold text-lg'>Kambaia!</Text>
-                    </View>
-                </View>
-                <View>
-                    <TouchableOpacity>
-                        <Ionicons name="settings-outline" size={24} color="white" />
-                    </TouchableOpacity>
-                </View>
-            </View>
-
+        <View className='w-full px-5 py-4 flex flex-col gap-5 bg-[#270685]'>
+            <HeaderMain search={false} colorWhite={false} />
             <View className='w-full rounded-lg flex justify-center items-center flex-col py-8 px-10 bg-[#42239C]'>
                 <Text className='text-gray-300'>Saldo na Conta</Text>
                 <View className='flex flex-row w-full mt-5 items-end justify-center'>
