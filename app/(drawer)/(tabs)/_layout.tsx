@@ -1,8 +1,7 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 const TabsLayout = () => {
     return (
@@ -23,45 +22,48 @@ const TabsLayout = () => {
                 name="index"
                 options={{
                     tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="home-minus" size={35} color={color} />
+                        <View className={`${color === '#6F45E9' && 'border-t-2 border-[#6F45E9]'}  flex-1 flex justify-center items-center w-full`
+                        }>
+                            <MaterialCommunityIcons name="home-minus" size={35} color={color} />
+                        </View>
                     ),
-                    tabBarActiveTintColor: '#6F45E9',
                     tabBarLabel: "Home",
-                    tabBarLabelStyle: {fontSize: 16, fontWeight: '600'}
+                    tabBarLabelStyle: { fontSize: 16, fontWeight: '600' }
                 }}
             />
             <Tabs.Screen
                 name="search/index"
                 options={{
                     tabBarIcon: ({ color }) => (
-                        <View className='border-t-2 border-[#6F45E9] flex-1 flex justify-center items-center w-full'>
+                        <View className={`${color === '#6F45E9' && 'border-t-2 border-[#6F45E9]'}  flex-1 flex justify-center items-center w-full`}>
                             <MaterialCommunityIcons name="file-document-outline" size={35} color={color} />
                         </View>
                     ),
-                    tabBarActiveTintColor: '#6F45E9',
-                    tabBarLabelStyle: {fontSize: 16, fontWeight: '600'}
+                    tabBarLabelStyle: { fontSize: 16, fontWeight: '600' }
                 }}
             />
             <Tabs.Screen
                 name="report/index"
                 options={{
                     tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="credit-card-outline" size={35} color={color} />
+                        <View className={`${color === '#6F45E9' && 'border-t-2 border-[#6F45E9]'}  flex-1 flex justify-center items-center w-full`}>
+                            <MaterialCommunityIcons name="credit-card-outline" size={35} color={color} />
+                        </View>
                     ),
-                    tabBarActiveTintColor: '#6F45E9',
                     tabBarLabel: "Cartões",
-                    tabBarLabelStyle: {fontSize: 16, fontWeight: '600'},
+                    tabBarLabelStyle: { fontSize: 16, fontWeight: '600' },
                 }}
             />
             <Tabs.Screen
                 name="notification/index"
                 options={{
                     tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="wallet-outline" size={35} color={color} />
+                        <View className={`${color === '#6F45E9' && 'border-t-2 border-[#6F45E9]'}  flex-1 flex justify-center items-center w-full`}>
+                            <MaterialCommunityIcons name="wallet-outline" size={35} color={color} />
+                        </View>
                     ),
-                    tabBarActiveTintColor: '#6F45E9',
                     tabBarLabel: "Mais",
-                    tabBarLabelStyle: {fontSize: 16, fontWeight: '600'}
+                    tabBarLabelStyle: { fontSize: 16, fontWeight: '600' }
                 }}
             />
         </Tabs>

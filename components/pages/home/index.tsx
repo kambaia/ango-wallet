@@ -6,6 +6,7 @@ import { defaultConfig } from '@/styles/colors';
 import { Feather } from '@expo/vector-icons';
 import React from 'react';
 import { StyleSheet, View, Text, FlatList, Image } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const dataWeeks = [
     {
@@ -59,10 +60,10 @@ const imageMap: Record<string, any> = {
 };
 
 const data = [
-    { id: '1', name: 'Ali', user: 'profile-photo' },
-    { id: '2', name: 'Steve', user: 'profile-photo-2' },
-    { id: '3', name: 'Ahmed', user: 'profile-photo-3' },
-    { id: '4', name: 'Marina', user: 'profile-photo-4' },
+    { id: '1', name: 'Eduardo', user: 'profile-photo' },
+    { id: '2', name: 'Maria', user: 'profile-photo-2' },
+    { id: '3', name: 'Joel', user: 'profile-photo-3' },
+    { id: '4', name: 'Teodoro', user: 'profile-photo-4' },
 ];
 
 
@@ -75,15 +76,15 @@ const renderItem = ({ item }: { item: ListItem }) => (
 
 const HomePage = () => {
     return (
-        <View className='flex-1 bg-white'>
+        <SafeAreaView className='flex-1 bg-white'>
             <CardHome />
 
             <View style={{ padding: defaultConfig.mobilePadding.medium }}>
-                <Text className='font-bold text-[18px]'>Recent Transfers</Text>
+                <Text className='font-bold text-[18px]'>Transferencias Recentes</Text>
                 <View className='flex flex-row justify-center items-start pt-5 gap-5'>
                     <View className='bg-white flex flex-col justify-center items-center gap-2'>
                         <Image source={require('../../../assets/icons/new-transfer.png')} className='w-20 h-20 rounded-full' />
-                        <Text className='text-black text-[15px]'>Add</Text>
+                        <Text className='text-black text-[15px]'>Novo</Text>
                     </View>
                     <FlatList
                         data={data}
@@ -103,7 +104,7 @@ const HomePage = () => {
 
             <RecentActivities />
 
-        </View>
+        </SafeAreaView>
     );
 }
 
